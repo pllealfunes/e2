@@ -1,0 +1,49 @@
+html{
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(to top right,#f2994a, #D2691E);
+    text-align: center;
+    font-size: 23px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+
+.gameBoard,.mechanics{
+    background-color: whitesmoke;
+    margin: 10px;
+    border-radius: 50px;
+}
+
+h1{
+    font-size: 50px;
+    color:floralwhite;
+}
+
+h2{
+    text-align: center;
+}
+
+
+.mechanics{
+    width: 550px;
+    height: 500px;
+}
+
+.gameBoard{
+    width: 550px;
+}
+
+li{
+    margin: 10px;
+}
+
+ol,ul,p{
+    text-align: left;
+}
+
