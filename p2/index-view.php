@@ -20,7 +20,7 @@
     </div>
 
     <div class='story'>
-        <h1>Who Killed Mickey Mouse?</h1>
+        <h2>Who Killed Mickey Mouse?</h2>
         <p>Days before Halloween, Mickey Mouse, a wealthy actor, and businessman got into an awful argument with
             each of
             his
