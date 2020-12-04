@@ -1,0 +1,17 @@
+{
+    "1": {
+        "id": 1,
+        "guess": "moose",
+        "outcome": false
+    },
+    "2": {
+        "id": 2,
+        "guess": "sonic",
+        "outcome": true
+    },
+    "3": {
+        "id": 3,
+        "guess": "hedgehog",
+        "outcome": true
+    }
+}
