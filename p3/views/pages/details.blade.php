@@ -5,13 +5,12 @@ Round Details
 @endsection
 
 @section('body')
-<h1>Details</h1>
 
 @if($result)
 <div>
-    <span>Round #{{ $result['id'] }}</span>
+    <h2>Round #{{ $result['id'] }} Details</h2>
     <p>Player Guess: {{ $result['guess'] }}</p>
-    @if( $result['outcome'] == 1)
+    @if( $result['win'] == 1)
     <p>Player Won</p>
     @else
     <p>Player Lost</p>

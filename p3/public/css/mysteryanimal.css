@@ -35,6 +35,13 @@ a{
   text-decoration: none;
 }
 
+#error-show>li{
+  list-style-type: none;
+  font-size: 25px;
+  margin-right: 50px;
+  color: red;
+}
+
 #history-link,#home-link{
   font-size: 20px;
   border-style: dashed;
@@ -47,13 +54,13 @@ a{
 }
 
 #win-message{
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 10px;
-  color: brown;
+  color: green;
 }
 
 #lose-message{
-  font-size: 20px;
+  font-size: 25px;
   margin-top: 10px;
   color: red;
 }

@@ -13,7 +13,7 @@ class AppCommand extends Command
     {
         $this->app->db()->createTable('results', [
             'guess' => 'varchar(255)',
-            'outcome' => 'tinyint(1)',
+            'win' => 'tinyint(1)',
         ]);
 
         // Confirmation that table was created
@@ -24,9 +24,12 @@ class AppCommand extends Command
     {
         $results = new \App\Results($this->app->path('database/results.json'));
         foreach ($results->getAll() as $result) {
-
-            // Convert outcome boolean to int
-            $result['outcome'] = $result['outcome'] ? 1 : 0;
+            
+            // ID will get automatically added so no need to add
+            unset($result['id']);
+            
+            // Convert win result to numeric equivalent
+            $result['win'] = $result['win'] ? 1 : 0;
     
             // Insert result to database
             $this->app->db()->insert('results', $result);
@@ -36,6 +39,7 @@ class AppCommand extends Command
         dump($this->app->db()->all('results'));
     }
 
+    // Run command in console to initiate migration and seeds
     public function fresh()
     {
         $this->migrate();

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 class GameController extends Controller
 {
-    public function index()
+    public function history()
     {
         // Get all the round history from the database and display
         return $this->app->view('pages.history', [ 'results' => $this->app->db()->all('results')]);
@@ -15,12 +15,12 @@ class GameController extends Controller
         // Get the specific round from the url
         $id = $this->app->param('id');
 
-        # If no id is present, send the user to the history page
+        // If no id is present, send the user to the history page
         if (is_null($id)) {
             $this->app->redirect('/history');
         }
         
-        # Load the product details
+        // Load the round details
         $result = $this->app->db()->findById('results', $id);
         return $this->app->view('pages.details', ['result' => $result]);
     }
@@ -38,15 +38,15 @@ class GameController extends Controller
 
         // Check if player's guess matches random animal
         if ($guess == $animal || $guess == ucfirst($animal)) {
-            $message = true;
+            $win = true;
         } else {
-            $message = false;
+            $win = false;
         }
 
-        // Convert outcome boolean to int
+        // Convert win to numeric equivalent
         $data = [
             'guess' => $guess,
-            'outcome' => $message?1:0,
+            'win' => $win?1:0,
         ];
 
         // Save data to database on submit
@@ -55,7 +55,7 @@ class GameController extends Controller
         // On submit redirect player to homepage passing player guess and message if player lost or won
         $this->app->redirect('/', [
             'guess' => $guess,
-            'message' => $message
+            'win' => $win
             ]);
     }
 }

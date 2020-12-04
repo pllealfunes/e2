@@ -4,7 +4,7 @@
 Mystery Animal
 @endsection
 
-@section('content')
+@section('body')
 
 <h2>Instructions</h2>
 
@@ -16,13 +16,13 @@ Mystery Animal
 <div id='animal-description'>{{ $randDescription }}</div>
 
 @if($app->errorsExist())
-<ul class='error alert alert-danger'>
+<ul id='error-show' class='error alert alert-danger'>
     @foreach($app->errors() as $error)
     <li>{{ $error }}</li>
     @endforeach
 </ul>
 @elseif($guess)
-@if($message)
+@if($win)
 <div id='win-message'><i class="fas fa-trophy"></i> Congrats you did it!</div>
 @else
 <div id='lose-message'><i class="fas fa-times"></i> Aww try again</div>

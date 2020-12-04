@@ -20,10 +20,6 @@
         <h1>Mystery Animal <i class="fas fa-paw"> </i></h1>
     </header>
 
-    <main>
-        @yield('content')
-    </main>
-
     @yield('body')
     <script src="https://kit.fontawesome.com/1707487087.js" crossorigin="anonymous"></script>
 </body>

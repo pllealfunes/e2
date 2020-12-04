@@ -2,16 +2,16 @@
     "1": {
         "id": 1,
         "guess": "moose",
-        "outcome": false
+        "win": false
     },
     "2": {
         "id": 2,
         "guess": "sonic",
-        "outcome": true
+        "win": true
     },
     "3": {
         "id": 3,
         "guess": "hedgehog",
-        "outcome": true
+        "win": true
     }
 }
